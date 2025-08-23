@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yoann Torrado — Ingénieur R&D / Data Scientist</title>
+  <meta name="description" content="Portfolio et CV de Yoann Torrado, Ingénieur R&D en Deep Learning spécialisé en Vision par Ordinateur (INRIA)." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧠</text></svg>">
+
+  <!-- Fonts: system stack for performance -->
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --surface: #111318;
+      --muted: #98a2b3;
+      --text: #f2f4f7;
+      --brand: #7c3aed;
+      --chip:#1f2937;
+      --card:#0f172a;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg:#f8fafc; --surface:#ffffff; --text:#0b1220; --muted:#475569; --chip:#eef2ff; --card:#ffffff; --border: rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0}
+    body{font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; background:var(--bg); color:var(--text); line-height:1.6}
+    a{color:inherit; text-decoration: none}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in oklab, var(--bg) 70%, transparent); border-bottom:1px solid var(--border); z-index:10}
+    nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .nav-links{display:flex; gap:16px; flex-wrap:wrap}
+    .nav-links a{padding:10px 14px; border-radius:10px; border:1px solid transparent}
+    .nav-links a:hover{border-color:var(--border); background:color-mix(in oklab, var(--surface), transparent 35%)}
+    .theme-toggle{border:1px solid var(--border); background:var(--surface); color:var(--text); padding:10px 12px; border-radius:10px; cursor:pointer}
+
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; padding-block:32px}
+    .hero .card{background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:28px; box-shadow:var(--shadow)}
+    .title{font-size:clamp(28px, 3.5vw, 44px); font-weight:800; letter-spacing:-0.02em; margin:0}
+    .subtitle{font-size:clamp(16px, 2vw, 20px); color:var(--muted); margin-top:8px}
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .chip{background:var(--chip); color:color-mix(in srgb, var(--text), #000 15%); padding:8px 12px; border-radius:999px; font-size:14px; border:1px solid var(--border)}
+    .cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:12px; border:1px solid var(--border); background:var(--brand); color:white; font-weight:600; box-shadow:var(--shadow)}
+    .btn.secondary{background:var(--surface); color:var(--text)}
+
+    section{padding-block:32px}
+    .section-title{font-size:22px; margin:0 0 16px 0}
+    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:16px}
+    .col-6{grid-column: span 6}
+    .col-4{grid-column: span 4}
+    .col-12{grid-column: span 12}
+
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px}
+    .card + .card{margin-top:12px}
+    .muted{color:var(--muted)}
+    .item h3{margin:0 0 6px 0; font-size:18px}
+    .item .meta{font-size:14px; color:var(--muted)}
+    .list{display:flex; flex-direction:column; gap:12px}
+    ul.inline{list-style:none; padding:0; margin:0; display:flex; gap:10px; flex-wrap:wrap}
+
+    footer{border-top:1px solid var(--border); padding:28px 0; color:var(--muted); font-size:14px}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr}
+      .col-6, .col-4, .col-12{grid-column: span 12}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div style="display:flex; align-items:center; gap:10px">
+          <span style="font-size:22px">🧠</span>
+          <strong>Yoann Torrado</strong>
+        </div>
+        <div class="nav-links">
+          <a href="#experiences">Expériences</a>
+          <a href="#projets">Projets & Publications</a>
+          <a href="#competences">Compétences</a>
+          <a href="#formation">Formation</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" id="themeBtn" aria-label="Basculer le thème">🌓</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1 class="title">Ingénieur R&D / Data Scientist</h1>
+        <p class="subtitle">Deep Learning & Vision par Ordinateur — INRIA STARS. Conception de modèles robustes pour la détection et l'analyse vidéo en santé et sécurité.</p>
+        <div class="chips">
+          <span class="chip">TensorFlow</span>
+          <span class="chip">PyTorch (Lightning)</span>
+          <span class="chip">Computer Vision</span>
+          <span class="chip">VideoMAE</span>
+          <span class="chip">OpenCV</span>
+          <span class="chip">MLflow</span>
+          <span class="chip">Docker</span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="[eng]Yoann_Torrado_CV.docx.pdf" download>Télécharger le CV</a>
+          <a class="btn secondary" href="#contact">Me contacter</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="list">
+          <div class="item">
+            <h3>Localisation</h3>
+            <div class="meta">Sannois (95110), France</div>
+          </div>
+          <div class="item">
+            <h3>Langues</h3>
+            <div class="meta">Français (natif), Anglais (C1 TOEIC 955), Espagnol (B1)</div>
+          </div>
+          <div class="item">
+            <h3>Certifications</h3>
+            <div class="meta">Stanford ML (Coursera), DeepLearning.AI TensorFlow Developer, MathWorks DL/Matlab Onramps</div>
+          </div>
+          <div class="item">
+            <h3>Permis</h3>
+            <div class="meta">Permis B</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiences">
+      <h2 class="section-title">Expériences professionnelles</h2>
+      <div class="grid">
+        <div class="col-12">
+          <div class="card list">
+            <div class="item">
+              <h3>Ingénieur R&D — INRIA Sophia Antipolis, Équipe STARS</h3>
+              <div class="meta">Janvier 2023 – Mai 2025</div>
+              <p>
+                Détection de dystrophies neuromusculaires (FSHD) sur visage et corps à partir de vidéos RGB. Conception d'un pipeline auto-encodeur/transformer pour l'analyse de séquences, préparation de données, et présentation des résultats au 32e FSHD International Research Congress (2025).
+              </p>
+            </div>
+            <div class="item">
+              <h3>Ingénieur R&D — INRIA Sophia Antipolis, Équipe STARS</h3>
+              <div class="meta">Septembre 2022 – Janvier 2023</div>
+              <p>
+                Détection de chutes de personnes âgées via estimation de pose en flux vidéo temps réel (squelettes, GCN).
+              </p>
+            </div>
+            <div class="item">
+              <h3>Stage de fin d'études — SouthPigalle (Data Scientist Deep Learning)</h3>
+              <p>Outil de monitoring temps réel via WebRTC : détection d’émotions (PyTorch, TensorFlow, OpenCV).</p>
+            </div>
+            <div class="item">
+              <h3>Stage — ACENSI (Data Scientist Deep Learning)</h3>
+              <p>Modèles de reconnaissance d’images et robot de détection de port du masque (TensorFlow).</p>
+            </div>
+            <div class="item">
+              <h3>Projet Innovation M2 — INSEP</h3>
+              <p>Analyse automatique du mouvement par IA (OpenPose, OpenCV).</p>
+            </div>
+            <div class="item">
+              <h3>Projet Innovation M1 — Chatbot anti-harcèlement</h3>
+              <p>Lauréat « coup de cœur du jury ».</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets">
+      <h2 class="section-title">Projets & Publications</h2>
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <h3>Reconnaissance des dystrophies liées au FSHD</h3>
+            <p class="muted">Mars 2025 — Étude basée sur VideoMAE, VoxCeleb et classification multi‑tâches.</p>
+            <ul>
+              <li>113 patients (CHU Nice), 15 exercices faciaux, 284 vidéos longues.</li>
+              <li>Précision 79,1% (FSHD vs non‑FSHD) sur clips représentatifs ; vote majoritaire multi‑exercices : 72%.</li>
+              <li>Spécificité 79,2% ; traitement d’un jeu de test complet &lt; 1 minute.</li>
+            </ul>
+            <div class="cta">
+              <a class="btn secondary" href="FSHD.pdf" download>Télécharger le PDF</a>
+              <a class="btn secondary" href="https://www.fshdsociety.org/wp-content/uploads/2025/05/2025-IRC-ABSTRACT-BOOK.pdf" target="_blank" rel="noopener">Abstract book (p.14)</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h3>Détection de chutes en vidéo</h3>
+            <p class="muted">GCN sur squelettes, inférence temps réel.</p>
+            <ul>
+              <li>Extraction de poses, normalisation des graphes dynamiques.</li>
+              <li>Optimisations pour faible latence.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <h2 class="section-title">Compétences</h2>
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <h3>Data Science</h3>
+            <ul class="inline">
+              <li>Deep Learning</li><li>DataViz</li><li>Nettoyage Données</li><li>Graphes</li><li>Statistiques</li>
+            </ul>
+            <h3>Frameworks & Outils</h3>
+            <ul class="inline">
+              <li>TensorFlow</li><li>Keras</li><li>PyTorch</li><li>Scikit‑learn</li><li>OpenCV</li><li>Matplotlib</li><li>MLflow</li><li>W&B</li>
+            </ul>
+            <h3>Langages</h3>
+            <ul class="inline">
+              <li>Python</li><li>R</li><li>C/C++</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h3>Big Data & Dev</h3>
+            <ul class="inline">
+              <li>Spark</li><li>Hadoop</li><li>HDFS</li><li>Hive</li><li>MongoDB</li><li>Cassandra</li><li>SQL/NoSQL</li><li>Grafana</li>
+            </ul>
+            <h3>Ops & Outils</h3>
+            <ul class="inline">
+              <li>Git/GitHub</li><li>Docker</li><li>ElasticSearch</li><li>Jupyter</li><li>Bitbucket</li><li>Azure</li><li>AWS</li><li>Linux/Ubuntu</li>
+            </ul>
+            <h3>Gestion de projet</h3>
+            <ul class="inline">
+              <li>Agile/Scrum</li><li>Jira</li><li>Trello</li><li>Notion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formation">
+      <h2 class="section-title">Formation</h2>
+      <div class="grid">
+        <div class="col-6">
+          <div class="card">
+            <h3>Diplôme d’ingénieur en Informatique</h3>
+            <div class="meta">Efrei Paris — 2016–2021 (Big Data & Machine Learning)</div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h3>Semestre international</h3>
+            <div class="meta">Concordia University — Montréal, 2018</div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h3>Expert en informatique (L1)</h3>
+            <div class="meta">Epitech Paris — 2015–2016</div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h3>Baccalauréat Scientifique</h3>
+            <div class="meta">Notre‑Dame — Sannois, 2015</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="grid">
+        <div class="col-12">
+          <div class="card">
+            <p>N'hésitez pas à me contacter pour échanger ou obtenir mon CV complet.</p>
+            <ul>
+              <li>📧 <a href="mailto:yoann.torrado@hotmail.fr">yoann.torrado@hotmail.fr</a></li>
+              <li>📱 <a href="tel:+33698974432">+33 6 98 97 44 32</a></li>
+              <li>📍 Sannois (95110), France</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        © <span id="year"></span> Yoann Torrado — Portfolio. Construit avec HTML/CSS.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Année dynamique
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Thème (clair/sombre)
+    const root = document.documentElement;
+    const key = 'yt_theme';
+    const fromPrefers = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const saved = localStorage.getItem(key) || fromPrefers;
+    root.setAttribute('data-theme', saved);
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem(key, next);
+    });
+
+    // Défilement doux
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        if(!id) return;
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+  </script>
+
+  <!-- Données structurées (Organisation/Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yoann Torrado",
+    "jobTitle": "Ingénieur R&D / Data Scientist",
+    "address": {"@type":"PostalAddress","addressLocality":"Sannois","postalCode":"95110","addressCountry":"FR"},
+    "email": "mailto:yoann.torrado@hotmail.fr",
+    "telephone": "+33698974432",
+    "url": "",
+    "alumniOf": ["Efrei Paris", "Concordia University"],
+    "knowsAbout": ["Deep Learning","Computer Vision","FSHD","VideoMAE","TensorFlow","PyTorch"]
+  }
+  </script>
+</body>
+</html>
